@@ -1,130 +1,271 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <!--Map stuff goes here-->
-
 <head>
 	<title>Handimap</title>
-
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-
+	<meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+	<meta charset="utf-8">
 	<style>
-/*		#hr01 	{
-			color:white; 
-			background-color:#005a9c; 
-			width: 100%; 
-			padding: 5px;
-			text-align: center;
-			z-index:999;
-			font-size:300%; 
-			font-family: 'Pathway Gothic One', sans-serif;
-			}
-		#hr02 	{
-			color:white;
-			background-color:#005a9c; 
-			width: 100%; 
-			padding: 5px;
-			text-align: center;
-			z-index:999; 
-			font-size:150%; 
-			font-family: 'Pathway Gothic One', sans-serif;
-			}*/
+	/*      #hr01   {
+	           color:white; 
+	           background-color:#005a9c; 
+	           width: 100%; 
+	           padding: 5px;
+	           text-align: center;
+	           z-index:999;
+	           font-size:300%; 
+	           font-family: 'Pathway Gothic One', sans-serif;
+	           }
+	       #hr02   {
+	           color:white;
+	           background-color:#005a9c; 
+	           width: 100%; 
+	           padding: 5px;
+	           text-align: center;
+	           z-index:999; 
+	           font-size:150%; 
+	           font-family: 'Pathway Gothic One', sans-serif;
+	           }*/
 
-		#banner{
-			color:white; 
-			background-color:#005a9c; 
-			width: 100%; 
-			padding: 5px;
-			text-align: center;
-			z-index:999;
-			font-family: 'Pathway Gothic One', sans-serif;
-			position: absolute;
-			}
-		#hr01{
-			font-size:300%; 
-			}
-		#hr02{
-			font-size:150%; 
-			}
+	       #banner{
+	           color:white; 
+	           background-color:#005a9c; 
+	           width: 100%; 
+	           padding: 5px;
+	           text-align: center;
+	           z-index:10;
+	           font-family: 'Pathway Gothic One', sans-serif;
+	           position: fixed;
+	           }
+	       #hr01{
+	           font-size:300%; 
+	           }
+	       #hr02{
+	           font-size:150%; 
+	           }
 
 
-		#map {
-			height: 100%;
-			}
+	       #map {
+	           height: 100%;
+	           }
 
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			}
+	       html, body {
+	           height: 100%;
+	           margin: 0;
+	           padding: 0;
+	           }
+	/*Formatting for search box*/
+	   #description {
+	       font-family: Roboto;
+	       font-size: 15px;
+	       font-weight: 300;
+	   }
+
+	   #infowindow-content .title {
+	       font-weight: bold;
+	   }
+
+	   #infowindow-content {
+	       display: none;
+	   }
+
+	   #map #infowindow-content {
+	       display: inline;
+	   }
+
+	   .pac-card {
+	       margin: 10px 10px 0 0;
+	       border-radius: 2px 0 0 2px;
+	       box-sizing: border-box;
+	       -moz-box-sizing: border-box;
+	       outline: none;
+	       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+	       background-color: #fff;
+	       font-family: Roboto;
+	   }
+
+	   #pac-container {
+	       padding-bottom: 12px;
+	       margin-right: 12px;
+	   }
+
+	   .pac-controls {
+	       display: inline-block;
+	       padding: 5px 11px;
+	   }
+
+	   .pac-controls label {
+	       font-family: Roboto;
+	       font-size: 13px;
+	       font-weight: 300;
+	   }
+
+	   #pac-input {
+	       background-color: #fff;
+	       font-family: Roboto;
+	       font-size: 15px;
+	       font-weight: 300;
+	       margin-left: 12px;
+	       padding: 0 11px 0 13px;
+	       text-overflow: ellipsis;
+	       width: 400px;
+	   }
+
+	   #pac-input:focus {
+	       border-color: #4d90fe;
+	   }
+
+	   #title {
+	       color: #fff;
+	       background-color: #4d90fe;
+	       font-size: 25px;
+	       font-weight: 500;
+	       padding: 6px 12px;
+	   }
+	   #target {
+	       width: 345px;
+	   }
 
 	</style>
 	<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
-</head>
-
-<!-- <table style="width:100%; color: blue;"> -->
-
-
-
+</head><!-- <table style="width:100%; color: blue;"> -->
 <!-- </table>
  -->
-
 <body>
-<!-- <h1 id="hr01";">Handimap</h1>
-<h2 id="hr02";">(Location)</h2> -->
-<div id="banner">
-	<div id="hr01">HandiMap</div>
-	<div id="hr02">(Location)</div>
-</div>
-<div id="map"></div>
+	<!--Title Section-->
+	<div id="banner">
+		<div id="hr01">
+			HandiMap
+		</div>
+		<div id="hr02">
+			(Location)
+		</div>
+	</div><!--Sidebar-->
+	<div id="side">
+		<div id="popout_menu">
+			<div id="toggle"></div>
+		</div>
+		<div id="main_menu">
+			main menu
+		</div>
+	</div>
 	<script>
-		var map;
-		function initMap() {
-			map = new google.maps.Map(document.getElementById('map'), {
-				center: {lat: -34.397, lng: 150.644},
-				zoom: 8
-				});
-			}
-		var map, infoWindow;
-		function initMap() {
-		map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: -34.397, lng: 150.644},
-			zoom: 6
-		});
-		infoWindow = new google.maps.InfoWindow;
+	   var toggled = true;
 
-        // Try HTML5 geolocation.
-		if (navigator.geolocation) {
-			navigator.geolocation.getCurrentPosition(function(position) {
-			var pos = {
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			};
+	   $("#popout_menu").click(function())
+	</script> <!--Map-->
+	<form>
+		<input class="controls" id="pac-input" placeholder="Search Box" type="text">
+	</form>
+	<div id="map"></div>
+	<script>
+	       var map, infoWindow;
+	       function initMap() {
+	       map = new google.maps.Map(document.getElementById('map'), {
+	           center: {lat: -34.397, lng: 150.644},
+	           zoom: 17
+	       });
+	       infoWindow = new google.maps.InfoWindow;
 
-			infoWindow.setPosition(pos);
-			infoWindow.setContent('Location found.');
-			infoWindow.open(map);
-			map.setCenter(pos);
-		}, function() {
-			handleLocationError(true, infoWindow, map.getCenter());
-			});
-		} else {
-          // Browser doesn't support Geolocation
-			handleLocationError(false, infoWindow, map.getCenter());
-		}
-	}
+	       // Try HTML5 geolocation.
+	       if (navigator.geolocation) {
+	           navigator.geolocation.getCurrentPosition(function(position) {
+	           var pos = {
+	               lat: position.coords.latitude,
+	               lng: position.coords.longitude
+	           };
 
-		function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-		infoWindow.setPosition(pos);
-		infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-		infoWindow.open(map);
-	}
+	           infoWindow.setPosition(pos);
+	           infoWindow.setContent('Location found.');
+	           infoWindow.open(map);
+	           map.setCenter(pos);
+	       }, function() {
+	           handleLocationError(true, infoWindow, map.getCenter());
+	           });
+	       } else {
+	         // Browser doesn't support Geolocation
+	           handleLocationError(false, infoWindow, map.getCenter());
+	       }
 
-	</script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6gixDfpqrwyp3Xo-ryZP60zZLxyJqHSc&callback=initMap"
-	async defer></script>
+	/*Searchbar functions*/
+	       // Create the search box and link it to the UI element.
+	       var input = document.getElementById('pac-input');
+	       var searchBox = new google.maps.places.SearchBox(input);
+	       map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+	       // Bias the SearchBox results towards current map's viewport.
+	       map.addListener('bounds_changed', function() {
+	           searchBox.setBounds(map.getBounds());
+	       });
+
+	       var markers = [];
+	       // Listen for the event fired when the user selects a prediction and retrieve
+	       // more details for that place.
+	       searchBox.addListener('places_changed', function() {
+	           var places = searchBox.getPlaces();
+
+	           if (places.length == 0) {
+	           return;
+	       }
+
+	       // Clear out the old markers.
+	       markers.forEach(function(marker) {
+	       marker.setMap(null);
+	       });
+	       markers = [];
+
+	       // For each place, get the icon, name and location.
+	       var bounds = new google.maps.LatLngBounds();
+	       places.forEach(function(place) {
+	           if (!place.geometry) {
+	               console.log("Returned place contains no geometry");
+	               return;
+	           }
+	           var icon = {
+	               url: place.icon,
+	               size: new google.maps.Size(71, 71),
+	               origin: new google.maps.Point(0, 0),
+	               anchor: new google.maps.Point(17, 34),
+	               scaledSize: new google.maps.Size(25, 25)
+	           };
+
+	       // Create a marker for each place.
+	       markers.push(new google.maps.Marker({
+	       map: map,
+	       icon: icon,
+	       title: place.name,
+	       position: place.geometry.location
+	       }));
+
+	           if (place.geometry.viewport) {
+	           // Only geocodes have viewport.
+	               bounds.union(place.geometry.viewport);
+	           } else {
+	               bounds.extend(place.geometry.location);
+	           }
+	       });
+	           map.fitBounds(bounds);
+	       });
+
+
+
+	   }
+
+	       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+	       infoWindow.setPosition(pos);
+	       infoWindow.setContent(browserHasGeolocation ?
+	                             'Error: The Geolocation service failed.' :
+	                             'Error: Your browser doesn\'t support geolocation.');
+	       infoWindow.open(map);
+	   }
+
+
+
+
+
+	</script> 
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6gixDfpqrwyp3Xo-ryZP60zZLxyJqHSc&callback=initMap">
+	</script> <!--<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>-->
 </body>
 </html>
