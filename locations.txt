@@ -1,0 +1,3 @@
+Hal Marcus College of Science Engineering & Health, 30.547031, -87.216833, 170, 0, 0, 0, 0
+Building2, -34.02, 152, 120, 187, 0, 1, 1
+Nothing to see here, -34.987, -34.987, 5, 20, 0, 0, 0

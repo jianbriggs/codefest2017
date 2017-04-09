@@ -1,0 +1,111 @@
+#hr01   {
+	color:white; 
+	background-color:#005a9c; 
+	width: 100%; 
+	padding: 5px;
+	text-align: center;
+	z-index:999;
+	font-size:300%; 
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+#hr02   {
+	color:white;
+	background-color:#005a9c; 
+	width: 100%; 
+	padding: 5px;
+	text-align: center;
+	z-index:999; 
+	font-size:150%; 
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+
+#map {
+	height: 100%;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#form {
+}
+
+#header {
+}
+
+#row {
+}
+
+
+#target {
+	width: 345px;
+}
+
+.controls {
+	margin-top: 10px;
+	border: 1px solid transparent;
+	border-radius: 2px 0 0 2px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 32px;
+	outline: none;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#searchInput {
+	background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	width: 50%;
+}
+#searchInput:focus {
+	border-color: #4d90fe;
+}
+
+.brand-centered {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.navbar { 
+	margin-bottom: 0; 
+}
+
+.header .navbar-brand {
+	height: 80px;
+	width: auto;
+	padding: 8px 0px 0px 0px;
+}
+
+.header .nav >li >a {
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.header .navbar-toggle {
+	padding: 10px;
+	margin: 25px 15px 0px 0;
+}
+
+#navbar3 active {
+	background-color: blue;
+}
+
+.navbar-inverse .navbar-nav > .active{
+	color: #000;
+	background: #d65c14;
+}
+
+.map-wrapper {
+	position: relative;
+	height: calc(100vh - 81px);
+}
