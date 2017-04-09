@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--Map stuff goes here-->
+<head>
+	<title>Handimap</title>
+	<meta content="initial-scale=1.0, user-scalable=no" name="viewport">
+	<meta charset="utf-8">
+	<link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<style>
+	          html, body {
+	              height: 100%;
+	              margin: 0;
+	              padding: 0;
+	           }
+
+	       .brand-centered {
+	         display: flex;
+	         justify-content: center;
+	         position: absolute;
+	         width: 100%;
+	         left: 0;
+	         top: 0;
+	       }
+
+	       .navbar { 
+	           margin-bottom: 0; 
+	       }
+
+	       .header .navbar-brand {
+	         height: 80px;
+	         width: auto;
+	         padding: 8px 0px 0px 0px;
+	       }
+
+	       .header .nav >li >a {
+	         padding-top: 30px;
+	         padding-bottom: 30px;
+	       }
+	       .header .navbar-toggle {
+	         padding: 10px;
+	         margin: 25px 15px 0px 0;
+	       }
+
+	       .navbar-inverse .navbar-nav > .active{
+	           color: #000;
+	          background: #d65c14;
+	        }
+
+	        body { 
+	        	padding-top: 81px;
+	        }
+
+
+	        .bg {
+	          background: url('https://i.imgur.com/9ytrh45.png') no-repeat center center;
+	          position: fixed;
+	          width: 100%;
+	          height: 350px; 
+	          top:0;
+	          left:0;
+	          z-index: -1;
+	          -webkit-filter: blur(2px);
+              -webkit-filter: blur(2px);
+              -o-filter: blur(2px);
+              -ms-filter: blur(2px);
+              filter: blur(2px);
+	        }
+
+	        .jumbotron {
+	          height: 350px;
+	          color: white;
+	          text-shadow: #444 0 1px 1px;
+	          background:transparent;
+	        }
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-target="#navbar3" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button> <a class="navbar-brand image-responsive" href=""><img alt="HandiMap" src="https://i.imgur.com/FLweFWF.png"></a>
+				</div>
+				<div class="navbar-collapse collapse" id="navbar3">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="/Users/jeremy/Desktop/Codefest/codefest2017/index.html">Home</a>
+						</li>
+						<li class="active">
+							<a href="/Users/jeremy/Desktop/Codefest/codefest2017/about.html">About</a>
+						</li>
+						<li>
+							<a href="#">Contact</a>
+						</li>
+						<li class="dropdown">
+							<a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="#">Action</a>
+								</li>
+								<li>
+									<a href="#">Another action</a>
+								</li>
+								<li>
+									<a href="#">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li class="dropdown-header">Nav header</li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+								<li>
+									<a href="#">One more separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div class="bg"></div>
+	<div class="jumbotron">
+	  <h1>Bootstrap Jumbotron</h1>
+	  <p class="lead">- Test Subtext</p>
+	</div>
+
+	<div class="container">
+	  <div class="row">
+	    <h2>Test</h2>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	    <br>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	    <br>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	    <br>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	  </div>
+	  <hr>
+	  <div class="row">
+	    <h2>Test</h2>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	    <h2>Test</h2>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	    <h2>Test</h2>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	    
+	  </div>
+	  <hr>
+	  <div class="row">
+	    <h2>Test2</h2>
+	    Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. Test paragraph. 
+	  </div>
+	</div>
+	<hr>
+
+	<div class="container">
+		<div class="row">
+	      <div class="col-md-12 text-center"><p>The End.</p></div>
+	    </div>
+	</div>
+
+	<script type='text/javascript'>
+	var jumboHeight = $('.jumbotron').outerHeight();
+	function parallax(){
+	    var scrolled = $(window).scrollTop();
+	    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+	}
+
+	$(window).scroll(function(e){
+	    parallax();
+	});
+	</script>
+</body>
+</html>
